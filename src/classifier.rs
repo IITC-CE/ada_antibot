@@ -7,7 +7,7 @@ fn check_is_spam(raw_text: String) -> bool {
     let text = format!(" {} ", raw_text.to_lowercase());
 
     let mut is_spam = false;
-    for word in BAD_WORDS {
+    for &word in BAD_WORDS.iter() {
         if text.contains(word) {
             is_spam = true;
             break;
